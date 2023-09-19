@@ -9,7 +9,12 @@ module.exports = {
     extend: {
       fontFamily: {
         'Lexend': ['Lexend Deca', 'sans-serif'],
-        'Montserrat': ['Montserrat', 'sans-serif']
+        'Montserrat': ['Montserrat', 'sans-serif'],
+        'Open Sans': ['Open Sans', 'sans-serif']
+      },
+      colors: {
+        'primary': '#1c61e7',
+        'secondary': '#e6effd',
       }
     },
   },

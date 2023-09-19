@@ -1,8 +1,18 @@
-import React from 'react'
+import Footer from "@/components/footer/Footer";
+import Link from "next/link";
+
+
 
 const page = () => {
   return (
-    <div>page</div>
+    <>
+      <div className="main">
+        <div>
+          aaaa
+        </div>
+        <Footer />
+      </div>
+    </>
   )
 }
 

@@ -3,11 +3,51 @@
 @tailwind utilities;
 
 /*font import*/
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap');
+
+/*scroll for sidebar */
+.scroll {
+  overflow-y: scroll;
+}
+.scroll::-webkit-scrollbar {
+   width: 5px;
+}
+
+.scroll::-webkit-scrollbar-track {
+   background-color: aliceblue;
+   border-radius: 10px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+   border-radius: 10px;
+   background-color: rgb(167, 163, 163);
+}
+
+html {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   background-color: white;
 }
+
+/* SideBar */
+.header {
+  display: grid;
+  grid-template-areas: "sidebar main";
+  grid-template-columns: 60px 1fr;
+  grid-template-rows: auto;
+}
+
+.header .sidebar{
+  grid-area: menubar;
+}
+.header .main{
+  grid-area: main;
+}
+
 
 li {
   list-style: none;
@@ -15,4 +55,104 @@ li {
 
 a {
   text-decoration: none;
+}
+
+.mobile-btn-border {
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transition: transform 0.25s ease-out;
+  transform-origin: bottom right;
+}
+
+.animate-border {
+    animation: expand 0.25s ease-out forwards;
+}
+
+.mobile-btn:hover .mobile-btn-border {
+  transform: scaleX(1);
+}
+
+@keyframes expand {
+  0% {
+      transform: scaleX(0);
+      transform-origin: bottom right;
+  }
+  100% {
+      transform: scaleX(1);
+      
+  }
+}
+
+/*scroll to top*/
+
+.btn-scrollTop{
+  position: fixed;
+  bottom: 40px;
+  font-size: 1rem;
+  z-index: 1;
+  cursor: pointer;
+  right: 2%;
+  border-radius: 50px;
+  padding: 1em;
+}
+
+
+/* Tailwind css class */
+.links-content {
+  @apply flex items-center justify-center gap-3
+}
+
+.icon-size {
+  @apply text-xl
+}
+
+.link-title {
+  @apply font-medium text-gray-700 w-[17em] text-sm flex justify-start items-center transition-colors hover:text-primary
+}
+
+.span-arrow-right {
+  @apply absolute right-4
+}
+
+.arrow-right {
+  @apply text-gray-400
+}
+
+/* for mobile*/
+.mobile-sideBar {
+  @apply absolute top-0 left-0 flex flex-col gap-6 bg-white w-[290px] h-[100vh] border-r-[1px] border-gray-400 z-[9999]
+}
+
+.mobile-btn {
+  @apply relative cursor-pointer py-5 bg-gray-200 transition-all
+}
+
+/*showBar*/
+.show-bar {
+  @apply absolute z-[-999] rounded-r-lg top-0 left-[290px] h-[100vh] w-[263px] bg-white border-[1px] border-gray-100
+}
+
+/*Footer*/
+.footer-content {
+  @apply grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-5 sm:gap-8 md:gap-10 lg:gap-5 py-11 border-t border-gray-200
+}
+
+.link-semiBold {
+  @apply font-semibold text-xl
+}
+.socail-icon {
+  @apply p-2 w-8 h-8 text-white rounded-full
+}
+
+.link-li {
+  @apply text-gray-500 transition-all hover:text-primary
+}
+
+.end-footer {
+  @apply flex gap-5 lg:gap-0 flex-col lg:flex-row justify-center lg:justify-between items-center py-4 border-t border-gray-200
 }
