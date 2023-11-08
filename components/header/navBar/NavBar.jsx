@@ -31,7 +31,7 @@ const NavBar = ({ show, setShow, open, setOpen }) => {
                     <img className="lg:w-auto" src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/mega-electronics-logo.svg" alt="" />
                 </div>
                 <div className="hidden lg:flex items-center space-x-1 md:space-x-2 w-[200px] md:w-full border border-gray-200 rounded-[50px] relative p-1">
-                    <Input type="text" className="px-3 py-2 border-none shadow-none placeholder:text-gray-500 placeholder:text-xs md:placeholder:text-base" placeholder="Search for products" />
+                    <Input type="text" className="px-3 py-2 border-none shadow-none placeholder:text-gray-500 placeholder:text-base" placeholder="Search for products" />
                     <BiSearchAlt2 className='cursor-pointer absolute right-1 p-2 rounded-full bg-primary text-white w-10 h-10' />
                 </div>
                 <div className="block lg:hidden">
@@ -40,7 +40,7 @@ const NavBar = ({ show, setShow, open, setOpen }) => {
                 <div className="gap-2 hidden lg:flex">
                     <div className="flex items-center gap-4 w-[190px]">
                         <div>
-                            <PiPhoneCall className="text-4xl font-light" />
+                            <PiPhoneCall className="text-4xl text-gray-600" />
                         </div>
                         <div>
                             <h3 className="font-medium text-sm mb-1">24 Support</h3>
@@ -49,7 +49,7 @@ const NavBar = ({ show, setShow, open, setOpen }) => {
                     </div>
                     <div className="flex items-center gap-2 w-[150px]">
                         <div>
-                            <TbWorldUpload className="text-4xl" />
+                            <TbWorldUpload className="text-4xl text-gray-600" />
                         </div>
                         <div>
                             <h3 className="font-medium text-sm mb-1">Worldwide</h3>
