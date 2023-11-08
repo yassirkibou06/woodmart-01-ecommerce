@@ -9,18 +9,19 @@
 .scroll {
   overflow-y: scroll;
 }
+
 .scroll::-webkit-scrollbar {
-   width: 5px;
+  width: 5px;
 }
 
 .scroll::-webkit-scrollbar-track {
-   background-color: aliceblue;
-   border-radius: 10px;
+  background-color: aliceblue;
+  border-radius: 10px;
 }
 
 .scroll::-webkit-scrollbar-thumb {
-   border-radius: 10px;
-   background-color: rgb(167, 163, 163);
+  border-radius: 10px;
+  background-color: rgb(167, 163, 163);
 }
 
 html {
@@ -33,7 +34,7 @@ body {
   background-color: white;
 }
 
-/* SideBar */
+/* SideBar //////// =>*/
 .header {
   display: grid;
   grid-template-areas: "sidebar main";
@@ -41,10 +42,18 @@ body {
   grid-template-rows: auto;
 }
 
-.header .sidebar{
+@media (max-width: 1023px) {
+  .header {
+    grid-template-areas: "main";
+    grid-template-columns: 1fr;
+  }
+}
+
+.header .sidebar {
   grid-area: menubar;
 }
-.header .main{
+
+.header .main {
   grid-area: main;
 }
 
@@ -70,7 +79,7 @@ a {
 }
 
 .animate-border {
-    animation: expand 0.25s ease-out forwards;
+  animation: expand 0.25s ease-out forwards;
 }
 
 .mobile-btn:hover .mobile-btn-border {
@@ -79,18 +88,19 @@ a {
 
 @keyframes expand {
   0% {
-      transform: scaleX(0);
-      transform-origin: bottom right;
+    transform: scaleX(0);
+    transform-origin: bottom right;
   }
+
   100% {
-      transform: scaleX(1);
-      
+    transform: scaleX(1);
+
   }
 }
 
 /*scroll to top*/
 
-.btn-scrollTop{
+.btn-scrollTop {
   position: fixed;
   bottom: 40px;
   font-size: 1rem;
@@ -145,6 +155,7 @@ a {
 .link-semiBold {
   @apply font-semibold text-xl
 }
+
 .socail-icon {
   @apply p-2 w-8 h-8 text-white rounded-full
 }

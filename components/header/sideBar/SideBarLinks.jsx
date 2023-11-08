@@ -11,21 +11,21 @@ import { LuLaptop2, LuMouse, LuSmartphone } from "react-icons/lu";
 import { CgSmartphoneChip } from "react-icons/cg";
 import { PiGameControllerBold, PiMonitor, PiCameraBold } from "react-icons/pi";
 
-const SideBarLinks = ({ visible }) => {
+const SideBarLinks = ({ visible, show }) => {
 
     const [showLaptopsPcs, setShowLaptopsPcs] = useState(false);
     const [showComputer, setShowComputer] = useState(false);
     const [showHardware, setShowHardware] = useState(false);
 
     return (
-        <div className={`flex flex-col mt-5 gap-6 justify-center ${visible ? "items-start ml-5" : "items-center "}`}>
+        <div className={`flex flex-col mt-5 gap-6 ${visible || show ? "items-start justify-center ml-5" : "items-center"}`}>
             { /**ONE */}
             <div
                 className="links-content"
                 onMouseEnter={() => setShowLaptopsPcs(true)}
                 onMouseLeave={() => setShowLaptopsPcs(false)}
             >
-                {visible ? (
+                {visible || show ? (
                     <>
                         <motion.div
                             initial={false}
@@ -66,7 +66,7 @@ const SideBarLinks = ({ visible }) => {
                 onMouseEnter={() => setShowComputer(true)}
                 onMouseLeave={() => setShowComputer(false)}
             >
-                {visible ? (
+                {visible || show ? (
                     <>
                         <motion.div
                             initial={false}
@@ -106,7 +106,7 @@ const SideBarLinks = ({ visible }) => {
                 onMouseEnter={() => setShowHardware(true)}
                 onMouseLeave={() => setShowHardware(false)}
             >
-                {visible
+                {visible || show
                     ?
                     <>
                         <motion.div
@@ -142,7 +142,7 @@ const SideBarLinks = ({ visible }) => {
             </div>
             { /**FOUR */}
             <div className="links-content">
-                {visible
+                {visible || show
                     ?
                     <>
                         <motion.div
@@ -176,7 +176,7 @@ const SideBarLinks = ({ visible }) => {
             </div>
             { /**FIVE */}
             <div className="links-content">
-                {visible
+                {visible || show
                     ?
                     <>
                         <motion.div
@@ -210,7 +210,7 @@ const SideBarLinks = ({ visible }) => {
             </div>
             { /**SIX */}
             <div className="links-content">
-                {visible
+                {visible || show
                     ?
                     <>
                         <motion.div
@@ -244,7 +244,7 @@ const SideBarLinks = ({ visible }) => {
             </div>
             { /**SEVEN */}
             <div className="links-content">
-                {visible
+                {visible || show
                     ?
                     <>
                         <motion.div
@@ -278,7 +278,7 @@ const SideBarLinks = ({ visible }) => {
             </div>
             { /**END */}
             <div className="links-content">
-                {visible
+                {visible || show
                     ?
                     <>
                         <motion.div

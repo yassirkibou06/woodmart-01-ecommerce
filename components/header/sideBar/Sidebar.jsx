@@ -1,5 +1,4 @@
 "use client"
-
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import SideBarLinks from './SideBarLinks';
@@ -7,45 +6,34 @@ import MobileDeviceSideBar from './MobileDeviceSideBar';
 // react icons
 import { FiMenu } from "react-icons/fi";
 
-const SideBar = () => {
+const SideBar = ({show, setShow, open}) => {
     const [visible, setVisible] = useState(false);
-    const [open, setOpen] = useState(false);
-
-    const toggleSidebar = () => {
-        setOpen(!open);
-    };
-
+    
+console.log(show)
     return (
-        <div onMouseLeave={() => setVisible(false)}>
+        <div onMouseLeave={() => setVisible(false)} >
             {/* Mobile and Tablet: Use a button to toggle the sidebar */}
-            <motion.div className="block lg:hidden">
-                <motion.div
-                    transition={{ ease: "linear", duration: 5 }}
-                    onClick={() => setOpen(false)}
-                    className={`${open ? " absolute left-0 top-0 bg-black opacity-70 z-50 w-full h-[100vh]" : "hidden"}`}
-                ></motion.div>
-                <button className="absolute left-5 top-5" onClick={toggleSidebar}>
-                    <FiMenu className="text-black text-2xl" />
-                </button>
-            </motion.div>
             {open && <MobileDeviceSideBar />}
             {/**FOR Desktop ///////////*/}
             <motion.div
                 transition={{ ease: "linear", duration: 5 }}
                 onMouseOver={() => setVisible(false)}
+                onMouseLeave={() => setShow(false)}
                 onClick={() => setOpen(false)}
                 className={`${visible ? "fixed left-0 top-0 bg-black opacity-70 z-50 w-full h-full" : "hidden"}`}
             ></motion.div>
             <motion.div
                 onMouseEnter={() => setVisible(true)}
                 whileHover={{ width: "290px", backgroundColor: "white" }}
-                transition={{ duration: 0.3, delay: 0.1 }}
+                //whileHover={show ? {width: "290px", backgroundColor: "white" } : {width: "fit-content", backgroundColor: "white" }}
+                transition={{ duration: 0.1, delay: 0.1 }}
                 transitionEnd={{ display: "none" }}
-                className="hidden lg:block fixed top-0 left-0 z-[999] h-full border-r border-gray-100" >
+                style={{ width: "fit-content", backgroundColor: "transparent" }}
+                className={`hidden lg:block fixed top-0 left-0 z-[999] h-full border-r border-gray-100`} >
                 <motion.div
-                    className={`flex mx-2 mt-3 bg-primary rounded-full items-center transition-all delay-200 ${visible ? "w-[277px] h-11 justify-start gap-5" : "w-11 h-11 justify-center gap-0"
+                    className={`flex mx-2 mt-3 bg-primary rounded-full items-center transition-all delay-200 ${visible || show ? "w-[277px] h-11 justify-start gap-5" : "w-11 h-11 justify-center gap-0"
                         }`} >
-                    {visible
+                    {visible || show
                         ?
                         <>
                             <motion.div
@@ -76,7 +64,7 @@ const SideBar = () => {
                     }
                 </motion.div>
                 {/* // */}
-                <SideBarLinks visible={visible} />
+                <SideBarLinks visible={visible} show={show} />
             </motion.div>
         </div>
     );
