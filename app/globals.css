@@ -85,6 +85,33 @@ a {
 .mobile-btn:hover .mobile-btn-border {
   transform: scaleX(1);
 }
+/* main ==> *** */
+.custom-pagination-container {
+  position: absolute;
+  padding: 0.1em 0.5em;
+  border-radius: 50px;
+  background-color: white;
+  z-index: 5;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.custom-pagination .swiper-pagination-bullet {
+  background-color: gray;
+  width: 10px;
+  height: 10px;
+  transition: .4s all;
+}
+
+.custom-pagination .swiper-pagination-bullet:hover {
+  background-color: rgb(173, 173, 173);
+}
+
+.custom-pagination .swiper-pagination-bullet-active {
+  background-color: rgb(66, 65, 65);
+}
+
 
 @keyframes expand {
   0% {
@@ -182,4 +209,34 @@ a {
 
 .btn-hover {
   @apply text-2xl text-gray-700 hover:text-gray-200
+}
+
+/* Counter*/
+.timer-box {
+  @apply bg-white rounded-xl p-1 w-[55px] h-[55px] flex items-center flex-col shadow-sm shadow-gray-400
+}
+
+.timer-title {
+  @apply text-xl font-medium text-gray-700
+}
+
+.timer-desc {
+  @apply text-gray-500 text-[12px]
+}
+
+/*hero grid*/
+.box-ads {
+  @apply w-full h-[195px] bg-[#f0d7da] rounded-xl relative z-0 cursor-pointer overflow-hidden
+}
+
+.box-ads-title {
+  @apply text-white mt-8 font-bold text-xl tracking-wider pl-5
+}
+
+.box-ads-des {
+  @apply font-medium text-gray-100 text-[15px] pl-5 my-4
+}
+
+.box-ads-btn {
+  @apply bg-white ml-5 py-3 text-gray-900 text-xs
 }

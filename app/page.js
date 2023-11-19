@@ -1,26 +1,12 @@
 import Footer from "@/components/footer/Footer";
-import Link from "next/link";
+import MainContent from "@/components/main/MainContent";
 
 
-/*
 const page = () => {
   return (
     <>
-      <div className="main">
-        <div>
-          aaaa
-        </div>
-        <Footer />
-      </div>
-    </>
-  )
-}
-*/
-const page = () => {
-  return (
-    <>
-      <div className="main">
-        home
+      <div className="main bg-[#f6f6f6] h-[100vh]">
+        <MainContent />
       </div>
     </>
   )
