@@ -12,6 +12,7 @@ import { MdOutlineFavoriteBorder } from "react-icons/md";
 import { LuShoppingCart } from "react-icons/lu";
 import { Input } from "@/components/ui/input";
 import { BiSearchAlt2 } from "react-icons/bi";
+import Link from "next/link";
 
 const NavBarBottom = ({ show, setShow }) => {
     const usa = [
@@ -83,9 +84,9 @@ const NavBarBottom = ({ show, setShow }) => {
                     </NavigationMenuList>
                 </NavigationMenu>
                 <div className="flex items-center space-x-6">
-                    <div className="btn-style">
+                    <Link href="/login/my-account" className="btn-style">
                         <GoPerson className="btn-hover" />
-                    </div>
+                    </Link>
                     <div className="btn-style">
                         <TbArrowsShuffle className="btn-hover" />
                         <span className="absolute top-0 -right-1 text-xs shadow-gray-300 shadow-lg bg-white text-primary px-1 rounded-full">0</span>

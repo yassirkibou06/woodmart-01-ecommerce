@@ -30,8 +30,8 @@ const list = [
 
 const Footer = () => {
     return (
-        <footer className="h-auto  mx-4">
-            <div className="flex flex-col md:flex-row lg:flex-row my-7 items-center justify-center gap-8">
+        <footer className="h-auto mx-4">
+            <div className="flex w-full flex-col md:flex-row lg:flex-row my-7 items-center gap-8">
                 {list.map((item, index) => (
                     <div>
                         <div className="flex flex-col lg:flex-row gap-5 items-center" key={index}>
@@ -46,7 +46,7 @@ const Footer = () => {
             </div>
             <div className="footer-content">
                 <div className="sm:mb-5">
-                    <Image className="pb-4" src="./mega-electronics-logo.svg" width={190} height={190} alt="logo" />
+                    <Image className="pb-4" src="/mega-electronics-logo.svg" width={190} height={190} alt="logo" />
                     <p className="text-gray-400 pb-4">Condimentum adipiscing vel neque dis nam parturient orci at scelerisque.</p>
                     <h5 className="link-semiBold pb-4">Subscribe us</h5>
                     <div className="flex gap-2">
@@ -102,12 +102,12 @@ const Footer = () => {
                 <div>
                     <h4 className="font-semibold text-lg pb-4">Download App on Mobile:</h4>
                     <p className="text-gray-500 text-sm">15% discount on your first purchase</p>
-                    <div className="flex pt-4 gap-5">
+                    <div className="flex flex-row md:flex-col pt-4 gap-5">
                         <Link href="/">
-                            <Image src="./google-play.svg" width={150} height={30} alt="app-store" />
+                            <Image src="/app-store.svg" width={150} height={30} alt="app-store" />
                         </Link>
                         <Link href="/">
-                            <Image src="./app-store.svg" width={140} height={30} alt="app-store" />
+                            <Image src="/google-play.svg" width={140} height={30} alt="google-play" />
                         </Link>
                     </div>
                 </div>

@@ -1,8 +1,5 @@
-import SideBar from '@/components/header/sideBar/Sidebar';
 import './globals.css'
-import ScrollButton from '@/components/ScrollButton';
-import NavBar from '@/components/header/navBar/NavBar';
-import NavBarASideBar from '@/components/header/NavBarASideBar';
+import All from '@/components/All';
 
 
 export const metadata = {
@@ -11,12 +8,10 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+
   return (
     <html lang="en">
-      <body className="relative header font-Open Sans">
-        <NavBarASideBar children={children} />
-        <ScrollButton />
-      </body>
+      <All children={children} />
     </html>
   )
 }

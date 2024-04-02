@@ -1,4 +1,5 @@
 "use client"
+import Link from 'next/link';
 import { Input } from '@/components/ui/input';
 import { motion } from 'framer-motion';
 import { BiSearchAlt2 } from 'react-icons/bi';
@@ -27,9 +28,9 @@ const NavBar = ({ show, setShow, open, setOpen }) => {
                         <FiMenu className="text-black text-2xl" />
                     </button>
                 </motion.div>
-                <div className="w-[40%]">
+                <Link href="/" className="w-[40%]">
                     <img className="lg:w-auto" src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/mega-electronics-logo.svg" alt="" />
-                </div>
+                </Link>
                 <div className="hidden lg:flex items-center space-x-1 md:space-x-2 w-[200px] md:w-full border border-gray-200 rounded-[50px] relative p-1">
                     <Input type="text" className="px-3 py-2 border-none shadow-none placeholder:text-gray-500 placeholder:text-base" placeholder="Search for products" />
                     <BiSearchAlt2 className='cursor-pointer absolute right-1 p-2 rounded-full bg-primary text-white w-10 h-10' />
@@ -64,4 +65,4 @@ const NavBar = ({ show, setShow, open, setOpen }) => {
 }
 //block mx-auto w-[30%] md:w-[40%]
 
-export default NavBar
+export default NavBar;

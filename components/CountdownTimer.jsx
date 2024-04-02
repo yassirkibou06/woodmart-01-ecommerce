@@ -10,7 +10,7 @@ const CountdownTimer = () => {
   let interval = useRef();
 
   const startTimer = () => {
-    const countDownDate = new Date('Nov 30, 2023 00:00:00').getTime();
+    const countDownDate = new Date('March 10, 2024 00:00:00').getTime();
 
     interval = setInterval(() => {
       const now = new Date().getTime();

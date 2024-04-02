@@ -1,9 +1,10 @@
 "use client"
 import { useState } from 'react'
 import SideBar from './sideBar/Sidebar'
-import NavBar from './navBar/NavBar'
+import NavBar from './navBar/NavBar';
+import Footer from '../footer/Footer';
 
-const NavBarASideBar = ({ children }) => {
+const NavBarASideBarAFooter = ({ children }) => {
     const [show, setShow] = useState(false);
     //for mobile toggle
     const [open, setOpen] = useState(false);
@@ -15,9 +16,10 @@ const NavBarASideBar = ({ children }) => {
             <div>
                 <NavBar open={open} setOpen={setOpen} show={show} setShow={setShow} />
                 {children}
+                <Footer />
             </div>
         </>
     )
 }
 
-export default NavBarASideBar;
+export default NavBarASideBarAFooter;

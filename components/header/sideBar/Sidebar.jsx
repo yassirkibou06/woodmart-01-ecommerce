@@ -9,7 +9,7 @@ import { FiMenu } from "react-icons/fi";
 const SideBar = ({show, setShow, open}) => {
     const [visible, setVisible] = useState(false);
     
-console.log(show)
+    //console.log(show)
     return (
         <div onMouseLeave={() => setVisible(false)} >
             {/* Mobile and Tablet: Use a button to toggle the sidebar */}
@@ -29,7 +29,7 @@ console.log(show)
                 transition={{ duration: 0.1, delay: 0.1 }}
                 transitionEnd={{ display: "none" }}
                 style={{ width: "fit-content", backgroundColor: "transparent" }}
-                className={`hidden lg:block fixed top-0 left-0 z-[999] h-full border-r border-gray-100`} >
+                className={`hidden sidebar lg:block fixed top-0 left-0 z-[999] h-full border-r border-gray-100`} >
                 <motion.div
                     className={`flex mx-2 mt-3 bg-primary rounded-full items-center transition-all delay-200 ${visible || show ? "w-[277px] h-11 justify-start gap-5" : "w-11 h-11 justify-center gap-0"
                         }`} >

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const ShowBar = ({ data }) => {
   return (
@@ -8,31 +9,27 @@ const ShowBar = ({ data }) => {
       transition={{ duration: 0.8 }}
       className="show-bar scroll"
     >
-      <ul>
-        {Object.keys(data).map((categoryKey) => {
-          const category = data[categoryKey];
-          return (
-            <li key={categoryKey}
-              className={`mx-4 pt-5 ${category.title === "Pcs" ||
-                  category.title === "INPUT DEVICES" ||
-                  category.title === "HARDWARE & OTHER"
-                  ? "border-none"
-                  : "border-b-[1px] border-gray-200 mb-2"}`} >
-              <a href={category.link} className="font-semibold text-sm uppercase hover:text-primary">{category.title}</a>
-              <ul>
-                {Object.keys(category.data).map((itemKey) => {
-                  const item = category.data[itemKey];
-                  return (
-                    <li key={itemKey} className="my-3">
-                      <a className="text-[15px] text-gray-400 hover:text-primary" href={`${category.link}${item.link}`}>{item.name}</a>
-                    </li>
-                  );
-                })}
+      {data.map((category) => (
+        <ul key={category._id}>
+          {/* Access category */}
+          <li className="mx-4 pt-5">
+            {category.productGroups.map((group) => (
+              <ul key={group.groupTitle}>
+                {/* Loop through productGroups within category */}
+                <li className="flex flex-col space-y-4 border-b border-secondary pb-3 mb-4">
+                  <Link href={group.groupTitle == "LAPTOPS" ? "/laptops" 
+                  : group.groupTitle == "TABLETS" ? "/tablets" : ""  } className="font-medium text-sm">{group.groupTitle}</Link>
+                  {group.products.map((product) => (
+                    <Link key={product._id} className="text-[15px] text-gray-400 hover:text-primary" href={`${product.link}`}>
+                      {product.title}
+                    </Link>
+                  ))}
+                </li>
               </ul>
-            </li>
-          );
-        })}
-      </ul>
+            ))}
+          </li>
+        </ul>
+      ))}
     </motion.div>
   );
 }

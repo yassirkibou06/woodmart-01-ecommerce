@@ -12,7 +12,7 @@ import CountdownTimer from '../CountdownTimer';
 
 const MainContent = () => {
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 p-2 mb-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 p-4 mb-4">
             <Swiper
                 pagination={true}
                 modules={[Pagination]}
