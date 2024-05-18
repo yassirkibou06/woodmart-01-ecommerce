@@ -1,0 +1,360 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*font import*/
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap');
+
+
+/* For shadcn-ui ///*/
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+/*End /////*/
+
+/*scroll for sidebar */
+.scroll {
+  overflow-y: scroll;
+}
+
+.scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.scroll::-webkit-scrollbar-track {
+  background-color: aliceblue;
+  border-radius: 10px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgb(167, 163, 163);
+}
+
+html {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: white;
+}
+
+.swiper {
+  margin: 0 !important;
+}
+
+/* SideBar //////// =>*/
+.header {
+  display: grid;
+  grid-template-areas: "sidebar main";
+  grid-template-columns: 60px 1fr;
+  grid-template-rows: auto;
+}
+
+@media (max-width: 1023px) {
+  .header {
+    grid-template-areas: "main";
+    grid-template-columns: 1fr;
+  }
+}
+
+.header .sidebar {
+  grid-area: sidebar;
+}
+
+.header .main {
+  grid-area: main;
+}
+
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.mobile-btn-border {
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transition: transform 0.25s ease-out;
+  transform-origin: bottom right;
+}
+
+.animate-border {
+  animation: expand 0.25s ease-out forwards;
+}
+
+.mobile-btn:hover .mobile-btn-border {
+  transform: scaleX(1);
+}
+
+/* main ==> *** */
+.custom-pagination-container {
+  position: absolute;
+  padding: 0.1em 0.5em;
+  border-radius: 50px;
+  background-color: white;
+  z-index: 5;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.custom-pagination .swiper-pagination-bullet {
+  background-color: gray;
+  width: 10px;
+  height: 10px;
+  transition: .4s all;
+}
+
+.custom-pagination .swiper-pagination-bullet:hover {
+  background-color: rgb(173, 173, 173);
+}
+
+.custom-pagination .swiper-pagination-bullet-active {
+  background-color: rgb(66, 65, 65);
+}
+
+
+@keyframes expand {
+  0% {
+    transform: scaleX(0);
+    transform-origin: bottom right;
+  }
+
+  100% {
+    transform: scaleX(1);
+
+  }
+}
+
+/*scroll to top*/
+
+.btn-scrollTop {
+  position: fixed;
+  bottom: 40px;
+  font-size: 1rem;
+  z-index: 1;
+  cursor: pointer;
+  right: 2%;
+  border-radius: 50px;
+  padding: 1em;
+}
+
+
+/* Tailwind css class */
+.links-content {
+  @apply flex items-center justify-center gap-3
+}
+
+.icon-size {
+  @apply text-xl
+}
+
+.link-title {
+  @apply font-medium text-gray-700 w-[17em] text-sm flex justify-start items-center transition-colors hover:text-primary
+}
+
+.span-arrow-right {
+  @apply absolute right-4
+}
+
+.arrow-right {
+  @apply text-gray-400
+}
+
+/* for mobile*/
+.mobile-sideBar {
+  @apply absolute top-0 left-0 flex flex-col gap-6 bg-white w-[290px] h-[100vh] border-r-[1px] border-gray-400 z-[9999]
+}
+
+.mobile-btn {
+  @apply relative cursor-pointer py-5 bg-gray-200 transition-all
+}
+
+/*showBar*/
+.show-bar {
+  @apply absolute z-[-999] rounded-r-lg top-0 left-[290px] h-[100vh] w-[263px] bg-white border-[1px] border-gray-100
+}
+
+/*Footer*/
+.footer-content {
+  @apply grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-5 sm:gap-8 md:gap-10 lg:gap-5 py-11 border-t border-gray-200
+}
+
+.link-semiBold {
+  @apply font-semibold text-xl
+}
+
+.socail-icon {
+  @apply p-2 w-8 h-8 text-white rounded-full
+}
+
+.link-li {
+  @apply text-gray-500 transition-all hover:text-primary
+}
+
+.end-footer {
+  @apply flex gap-5 lg:gap-0 flex-col lg:flex-row justify-center lg:justify-between items-center py-4 border-t border-gray-200
+}
+
+.navBar-bottom-li {
+  @apply rounded-[50px] hover:bg-blue-300 py-2 px-3
+}
+
+.navBar-bottom-a {
+  @apply hover:text-primary font-semibold text-sm text-gray-600
+}
+
+.btn-style {
+  @apply bg-white p-2 rounded-full cursor-pointer shadow-gray-100 shadow-lg relative
+}
+
+.btn-hover {
+  @apply text-2xl text-gray-700 hover:text-gray-200
+}
+
+/* Counter*/
+.timer-box {
+  @apply bg-white rounded-xl p-1 w-[55px] h-[55px] flex items-center flex-col shadow-sm shadow-gray-400
+}
+
+.timer-title {
+  @apply text-xl font-medium text-gray-700
+}
+
+.timer-desc {
+  @apply text-gray-500 text-[12px]
+}
+
+/*hero grid*/
+.box-ads {
+  @apply w-full h-[195px] bg-[#f0d7da] rounded-xl relative z-0 cursor-pointer overflow-hidden
+}
+
+.box-ads-title {
+  @apply text-white mt-8 font-bold text-xl tracking-wider pl-5
+}
+
+.box-ads-des {
+  @apply font-medium text-gray-100 text-[15px] pl-5 my-4
+}
+
+.box-ads-btn {
+  @apply bg-white ml-5 py-3 text-gray-900 text-xs
+}
+
+/* ====== ACCOUNT ======*/
+.input-outline-account {
+  @apply px-3 py-2 w-full rounded-md border border-gray-300
+}
+
+/*====== popular category ==========*/
+.card {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+
+/*FOR DASHBOARD /////////////////////////////////////////////////////////////////////////*/
+
+
+/*scroll for sidebar */
+.scroll {
+  overflow-y: scroll;
+}
+
+.scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scroll::-webkit-scrollbar-track {
+  background-color: aliceblue;
+  border-radius: 10px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgb(167, 163, 163);
+}
+
+/*tailwind css*/
+.btn-open {
+  @apply p-1 border-[1px] rounded-ROne cursor-pointer hover:bg-primary hover:text-white duration-700
+}
+
+.for-all {
+  @apply bg-[#f1f5f9] overflow-hidden
+}
