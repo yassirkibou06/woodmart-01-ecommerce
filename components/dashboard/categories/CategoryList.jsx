@@ -7,13 +7,17 @@ import EditCategory from "./EditCategory";
 
 const CategoryList = ({ name }) => {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-    const token = useState(localStorage.getItem("token"));
+    const [token, setToken] = useState(null);
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [nameId, setNameId] = useState(null);
     const [responseName, setResponseName] = useState(null);
     const [open, setOpen] = useState(false);
     const fetchUrl = `${apiUrl}/api/category`;
+
+    useEffect(() => {
+        setToken(localStorage.getItem("token"));
+    }, []);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -42,7 +46,7 @@ const CategoryList = ({ name }) => {
         fetch(apiUrl + "/api/category" + "/" + id, {
             method: "DELETE",
             headers: {
-                "Authorization": "Bearer " + token[0],
+                "Authorization": "Bearer " + token,
             },
         }).then((res) => {
             if (data) {

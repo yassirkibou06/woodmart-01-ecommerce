@@ -12,7 +12,7 @@ import Bar from "./Bar";
 const SideBar = ({ open, setOpen }) => {
     return (
         <>
-            <div className={`bg-transparent md:h-[100vh] left-0 top-0 border-r border-gray-200 py-4 px-3 ${open ? 'h-[100vh] w-full z-[1000] bg-white fixed  md:sticky overflow-x-hidden' : 'overflow-hidden h-0 z-0'}`}>
+            <div className={`bg-transparent md:h-[100vh] left-0 top-0 border-r border-gray-200 py-4 px-3 ${open ? 'h-[100vh] w-full z-[1000] bg-white fixed md:sticky overflow-x-hidden' : 'overflow-hidden h-0 z-0'}`}>
                 <div className={`${open ? "flex items-center justify-between border-b border-gray-200" : "none pt-1"} md:py-5`}>
                     {open ?
                         <div className="">

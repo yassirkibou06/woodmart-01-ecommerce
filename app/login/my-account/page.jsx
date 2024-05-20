@@ -19,27 +19,7 @@ const page = () => {
 
   const router = useRouter();
   const apiUrl = process.env.NEXT_PUBLIC_API_URL
-  /*
-    const handleLogout = async () => {
-      try {
-        const response = await fetch(apiUrl + "/api/user/logout");
   
-        if (!response.ok) {
-          throw new Error('Logout failed');
-        }
-  
-        // Clear authentication state (e.g., remove token from local storage)
-        localStorage.removeItem('token');
-  
-        setIsLoggedIn(false);
-        router.push('/login'); // Redirect to login page
-  
-        toast.success('Logout out successfully'); // Assuming you have toast for success messages
-      } catch (error) {
-        console.error('Logout error:', error);
-        toast.error('Failed to log out'); // Assuming you have toast for error messages
-      }
-    };*/
   const handleLogout = async () => {
     try {
       const token = localStorage.getItem('token');
