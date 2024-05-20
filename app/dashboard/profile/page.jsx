@@ -18,7 +18,7 @@ const page = () => {
             setUser({ id, firstname, lastname, email, mobile });
         } else {
             // Redirect to login if any data is missing
-            router.push('/login');
+            router.push('/my-account');
         }
     }, []);
 
