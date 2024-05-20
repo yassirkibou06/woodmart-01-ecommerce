@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -7,7 +7,7 @@ import AlertShowing from "../AlertShowing";
 
 const UploadCategory = ({ responseName, setResponseName }) => {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-    const token = useState(localStorage.getItem("token"));
+    const [token, setToken] = useState(null);
     const [showAlert, setShowAlert] = useState(false);
     const [categoryData, setCategoryData] = useState({
         title: "",
@@ -20,6 +20,10 @@ const UploadCategory = ({ responseName, setResponseName }) => {
         ]
     });
     const fetchUrl = `${apiUrl}/api/category`;
+
+    useEffect(() => {
+        setToken(localStorage.getItem("token"));
+    }, []);
 
     const handleChange = (event, groupIndex, productIndex) => {
         const { name, value } = event.target;

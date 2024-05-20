@@ -8,7 +8,7 @@ import AlertShowing from "../AlertShowing"
 
 const EditProduct = ({ prodId, setResponseProd, setOpen, open }) => {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-    const token = process.env.NEXT_PUBLIC_TOKEN;
+    const [token, setToken] = useState(null);
     const [products, setProducts] = useState({
         title: "",
         slug: "",
@@ -28,6 +28,10 @@ const EditProduct = ({ prodId, setResponseProd, setOpen, open }) => {
         ]
     });
     const fetchUrl = `${apiUrl}/api/products`;
+
+    useEffect(() => {
+        setToken(localStorage.getItem("token"));
+    }, []);
 
     useEffect(() => {
         const fetchData = async () => {

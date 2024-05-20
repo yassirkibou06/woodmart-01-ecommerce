@@ -42,7 +42,7 @@ const PopularCategory = () => {
                     <div>
                         <img className="rounded-lg w-[150px] h-[150px]" src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/11/mobile-phones-apple-iphone.jpg" alt="" />
                     </div>
-                    <h3 className="font-medium mt-2">Apple IPhone</h3>
+                    <h3 className="font-medium mt-2">Gaming Laptop</h3>
                     <p className="text-gray-500">8 Products</p>
                 </SwiperSlide>
                 {/**card 3 just example */}
@@ -50,7 +50,7 @@ const PopularCategory = () => {
                     <div>
                         <img className="rounded-lg w-[150px] h-[150px]" src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/headsets.jpg" alt="" />
                     </div>
-                    <h3 className="font-medium mt-2">Headsets</h3>
+                    <h3 className="font-medium mt-2">Apple Ipad</h3>
                     <p className="text-gray-500">7 Products</p>
                 </SwiperSlide>
                 {/**card 4 just example */}
@@ -58,7 +58,7 @@ const PopularCategory = () => {
                     <div>
                         <img className="rounded-lg w-[150px] h-[150px]" src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/Laptops-1.jpg" alt="" />
                     </div>
-                    <h3 className="font-medium mt-2">Apple MacBook</h3>
+                    <h3 className="font-medium mt-2">2k Monitors</h3>
                     <p className="text-gray-500">5 Products</p>
                 </SwiperSlide>
                 {/**card 5 just example */}

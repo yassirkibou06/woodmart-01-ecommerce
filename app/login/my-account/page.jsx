@@ -1,5 +1,5 @@
 "use client"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRequireAuth } from '@/utils/auth';
 import { useRouter } from 'next/navigation';
 import { ToastContainer, toast } from 'react-toastify';
@@ -8,22 +8,30 @@ import { MdAttachEmail } from 'react-icons/md';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
 import Link from 'next/link';
 
-const page = () => {
+const Page = () => {
   useRequireAuth();
   const [isLoggedIn, setIsLoggedIn] = useState(true);
-  const role = useState(localStorage.getItem('role'));
-  const firstname = useState(localStorage.getItem('firstname'));
-  const lastname = useState(localStorage.getItem('lastname'));
-  const email = useState(localStorage.getItem('email'));
-  const mobile = useState(localStorage.getItem('mobile'));
+  const [token, setToken] = useState(null);
+  const [role, setRole] = useState('');
+  const [firstname, setFirstname] = useState('');
+  const [lastname, setLastname] = useState('');
+  const [email, setEmail] = useState('');
+  const [mobile, setMobile] = useState('');
 
   const router = useRouter();
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL
-  
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+
+  useEffect(() => {
+    setToken(localStorage.getItem("token"));
+    setRole(localStorage.getItem('role'));
+    setFirstname(localStorage.getItem('firstname'));
+    setLastname(localStorage.getItem('lastname'));
+    setEmail(localStorage.getItem('email'));
+    setMobile(localStorage.getItem('mobile'));
+  }, []); // Run once after component mount
+
   const handleLogout = async () => {
     try {
-      const token = localStorage.getItem('token');
-
       const response = await fetch(apiUrl + "/api/user/logout", {
         method: 'GET',
         headers: {
@@ -45,7 +53,6 @@ const page = () => {
       toast.error('Failed to log out');
     }
   };
-  console.log(role[0])
 
   return (
     <div className="bg-[#f6f6f6]">
@@ -85,20 +92,18 @@ const page = () => {
             <button className="font-medium px-4 py-2 bg-red-400 text-white rounded-md" onClick={handleLogout}>
               Logout
             </button>
-            {
-              role[0] === "admin" ?
-                <Link href="/dashboard" className="text-black font-medium flex items-center gap-2 hover:text-primary">
-                  Admin Dashboard
-                  <ArrowRightIcon className="w-5 h-5" />
-                </Link>
-                : ""
+            {role === "admin" &&
+              <Link href="/dashboard" className="text-black font-medium flex items-center gap-2 hover:text-primary">
+                Admin Dashboard
+                <ArrowRightIcon className="w-5 h-5" />
+              </Link>
             }
           </div>
         </div>
       </div>
       <ToastContainer />
     </div>
-  )
+  );
 }
 
-export default page;
+export default Page;

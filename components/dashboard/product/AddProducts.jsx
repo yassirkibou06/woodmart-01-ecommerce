@@ -1,4 +1,6 @@
-import { useState, useEffect } from "react";
+"use client"
+"use client"
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -14,7 +16,6 @@ import {
 
 const AddProducts = ({ responseProduct, setResponseProduct }) => {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-    const token = process.env.NEXT_PUBLIC_TOKEN;
     const [showAlert, setShowAlert] = useState(false);
     const [categories, setCategories] = useState([]);
     const [formSubmitted, setFormSubmitted] = useState(false);
@@ -42,6 +43,17 @@ const AddProducts = ({ responseProduct, setResponseProduct }) => {
         category: "",
         color: ""
     });
+
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        if (!token) {
+            // Handle the case when token is not available in localStorage
+            // For example, redirect user to login page or show an alert
+            console.error("Token not found in localStorage");
+            return;
+        }
+        setToken(token);
+    }, []);
 
     const handleChange = (event, property) => {
         setProducts({

@@ -7,13 +7,25 @@ import EditProduct from "../product/EditProduct"
 
 const ProductList = ({ product, setResponseProduct }) => {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-    const token = process.env.NEXT_PUBLIC_TOKEN;
+    const [token, setToken] = useState(null);
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [prodId, setProdId] = useState(null);
     const [responseProd, setResponseProd] = useState(null);
     const [open, setOpen] = useState(false);
     const fetchUrl = `${apiUrl}/api/product`;
+
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        if (!token) {
+            // Handle the case when token is not available in localStorage
+            // For example, redirect user to login page or show an alert
+            console.error("Token not found in localStorage");
+            return;
+        }
+        setToken(token);
+    }, []);
+
 
     useEffect(() => {
         const fetchData = async () => {
