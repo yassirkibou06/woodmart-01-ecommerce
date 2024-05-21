@@ -57,7 +57,7 @@ const Login = () => {
     };
 
     return (
-        <div className="grid grid-cols-2 px-36 gap-10 pt-16 pb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 px-8 lg:px-36 gap-10 pt-16 pb-20">
             {toggle ?
                 <div>
                     <h1 className="text-2xl font-semibold mb-6">LOGIN</h1>
