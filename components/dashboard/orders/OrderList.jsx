@@ -4,7 +4,7 @@ import { DataTable } from "@/components/dashboard/tableDataForOrder/data-table";
 import { ScaleLoader } from "react-spinners";
 
 const OrderList = () => {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || process.env.NEXT_PUBLIC_VERCEL_URL;
     const [token, setToken] = useState(null);
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);

@@ -14,7 +14,7 @@ const SideBarLinks = ({ visible, show }) => {
     const [data, setData] = useState([]);
     const [hoveredItemData, setHoveredItemData] = useState(null);
     const [showBar, setShowBar] = useState(false);
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || process.env.NEXT_PUBLIC_VERCEL_URL;
     const fetchUrl = `${apiUrl}/api/category`;
 
     useEffect(() => {

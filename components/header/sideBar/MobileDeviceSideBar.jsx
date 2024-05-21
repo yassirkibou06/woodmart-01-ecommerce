@@ -42,7 +42,7 @@ const menuData = [
 const MobileDeviceSideBar = () => {
     const [showLinkData, setShowLinkData] = useState(true);
     const [data, setData] = useState([]);
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || process.env.NEXT_PUBLIC_VERCEL_URL;
     const fetchUrl = `${apiUrl}/api/category`;
 
     useEffect(() => {

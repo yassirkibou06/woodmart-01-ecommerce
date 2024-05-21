@@ -19,7 +19,7 @@ const Page = () => {
   const [mobile, setMobile] = useState('');
 
   const router = useRouter();
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL || process.env.NEXT_PUBLIC_VERCEL_URL;
 
   useEffect(() => {
     setToken(localStorage.getItem("token"));

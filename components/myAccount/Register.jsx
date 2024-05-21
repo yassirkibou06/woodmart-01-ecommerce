@@ -13,7 +13,7 @@ const Register = ({ setToggle }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const router = useRouter();
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || process.env.NEXT_PUBLIC_VERCEL_URL;
 
     //api
     const handleSubmit = async (event) => {

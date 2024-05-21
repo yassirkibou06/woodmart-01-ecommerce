@@ -7,12 +7,16 @@ import AlertShowing from "../AlertShowing"
 
 
 const EditCategory = ({ nameId, setResponseName, setOpen, open }) => {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-    const token = process.env.NEXT_PUBLIC_TOKEN;
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || process.env.NEXT_PUBLIC_VERCEL_URL;
+    const [token, setToken] = useState(null);
     const [name, setName] = useState({
         id: "",
         title: ""
     });
+
+    useEffect(() => {
+        setToken(localStorage.getItem("token"));
+    }, []);
 
     useEffect(() => {
         const fetchData = async () => {

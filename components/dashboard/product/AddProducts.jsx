@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/select";
 
 const AddProducts = ({ responseProduct, setResponseProduct }) => {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || process.env.NEXT_PUBLIC_VERCEL_URL;
     const [token, setToken] = useState(null);
     const [showAlert, setShowAlert] = useState(false);
     const [categories, setCategories] = useState([]);

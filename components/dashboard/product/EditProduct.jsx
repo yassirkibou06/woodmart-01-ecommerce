@@ -7,7 +7,7 @@ import AlertShowing from "../AlertShowing"
 
 
 const EditProduct = ({ prodId, setResponseProd, setOpen, open }) => {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || process.env.NEXT_PUBLIC_VERCEL_URL;
     const [token, setToken] = useState(null);
     const [products, setProducts] = useState({
         title: "",
