@@ -16,6 +16,7 @@ import {
 
 const AddProducts = ({ responseProduct, setResponseProduct }) => {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+    const [token, setToken] = useState(null);
     const [showAlert, setShowAlert] = useState(false);
     const [categories, setCategories] = useState([]);
     const [formSubmitted, setFormSubmitted] = useState(false);
@@ -333,7 +334,7 @@ const AddProducts = ({ responseProduct, setResponseProduct }) => {
                         />
                     </div>
                     {/**button */}
-                    <div className="mt-8 grid md:hidden">
+                    <div className="mt-8 text-white grid md:hidden">
                         <Button onClick={(e) => {
                             addProductImage(e);
                         }}>Add Product</Button>

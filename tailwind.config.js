@@ -49,7 +49,8 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
         'primary': '#1c61e7',
-        'secondar': '#e6effd'
+        'secondar': '#e6effd',
+        "clr-text": "#333333"
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -72,9 +73,8 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       fontFamily: {
-        'Lexend': ['Lexend Deca', 'sans-serif'],
-        'Montserrat': ['Montserrat', 'sans-serif'],
-        'Open Sans': ['Open Sans', 'sans-serif']
+        'Lato': ["Lato", "sans-serif"],
+        'Open-sans': ['Open Sans', 'sans-serif']
       },
       gridTemplateColumns: {
         'open': '270px 1fr',

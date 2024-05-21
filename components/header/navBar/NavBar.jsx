@@ -35,9 +35,9 @@ const NavBar = ({ show, setShow, open, setOpen }) => {
                     <Input type="text" className="px-3 py-2 border-none shadow-none placeholder:text-gray-500 placeholder:text-base" placeholder="Search for products" />
                     <BiSearchAlt2 className='cursor-pointer absolute right-1 p-2 rounded-full bg-primary text-white w-10 h-10' />
                 </div>
-                <div className="block lg:hidden">
+                <Link href="/login/my-account" className="block lg:hidden">
                     <GoPerson className="text-2xl cursor-pointer" />
-                </div>
+                </Link>
                 <div className="gap-2 hidden lg:flex">
                     <div className="flex items-center gap-4 w-[190px]">
                         <div>
@@ -63,6 +63,5 @@ const NavBar = ({ show, setShow, open, setOpen }) => {
         </>
     )
 }
-//block mx-auto w-[30%] md:w-[40%]
 
 export default NavBar;

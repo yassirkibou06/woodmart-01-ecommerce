@@ -20,7 +20,7 @@ const All = ({ children }) => {
                     <AllFiles children={children} />
                 </body>
                 :
-                <body className="relative header font-Open Sans">
+                <body className="relative header font-Open-sans">
                     <NavBarASideBarAFooter children={children} />
                     <ScrollButton />
                 </body>

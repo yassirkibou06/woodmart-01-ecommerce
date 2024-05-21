@@ -3,11 +3,7 @@
 @tailwind utilities;
 
 /*font import*/
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap');
-
-
-/* For shadcn-ui ///*/
-@layer base {
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');@layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
@@ -212,7 +208,7 @@ a {
 }
 
 
-/* Tailwind css class */
+/* Tailwind css class ////////////////////////////////////////// */
 .links-content {
   @apply flex items-center justify-center gap-3
 }
@@ -307,7 +303,7 @@ a {
 }
 
 .box-ads-des {
-  @apply font-medium text-gray-100 text-[15px] pl-5 my-4
+  @apply text-gray-50/80 text-[15px] pl-5 my-4
 }
 
 .box-ads-btn {
@@ -325,6 +321,12 @@ a {
   flex-direction: column !important;
   align-items: center !important;
   justify-content: center !important;
+  background: transparent !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  display: none;
 }
 
 

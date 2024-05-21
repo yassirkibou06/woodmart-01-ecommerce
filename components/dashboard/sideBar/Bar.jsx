@@ -57,7 +57,7 @@ const Bar = ({ open, setOpen }) => {
             icon: <MdOutlineSell />
         },
         {
-            path: "/dashboard/profile",
+            path: "/login/my-acoount",
             name: "Profile",
             icon: <CgProfile />
         }

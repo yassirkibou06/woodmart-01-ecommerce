@@ -61,7 +61,7 @@ const Page = () => {
         <div className="bg-white rounded-md px-4 py-12">
           <h2 className="font-medium mb-8 text-xl">General Information</h2>
           {/*grid inputs /////*/}
-          <div className="grid grid-cols-2 items-center gap-5 px-5">
+          <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-5 px-5">
             <div>
               <h3 className="mb-2 font-medium">First Name</h3>
               <div className="input-outline-account">

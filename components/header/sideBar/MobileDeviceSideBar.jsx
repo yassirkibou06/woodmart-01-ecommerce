@@ -1,6 +1,5 @@
 "use client"
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from 'framer-motion';
 // react icons
 import { BsDeviceHdd } from "react-icons/bs";
@@ -10,40 +9,6 @@ import { LuLaptop2, LuMouse, LuSmartphone } from "react-icons/lu";
 import { CgSmartphoneChip } from "react-icons/cg";
 import { PiGameControllerBold, PiMonitor, PiCameraBold } from "react-icons/pi";
 
-const linkData = [
-    {
-        icon: <LuLaptop2 />,
-        title: 'Laptops, Tablets & PCs',
-    },
-    {
-        icon: <LuMouse />,
-        title: 'Computer & Office',
-    },
-    {
-        icon: <CgSmartphoneChip />,
-        title: 'Hardware & Components',
-    },
-    {
-        icon: <LuSmartphone />,
-        title: 'Smartphones',
-    },
-    {
-        icon: <PiGameControllerBold />,
-        title: 'Games & Entertainment',
-    },
-    {
-        icon: <PiMonitor />,
-        title: 'TV & Hi-Fi',
-    },
-    {
-        icon: <PiCameraBold />,
-        title: 'Photo & Video',
-    },
-    {
-        icon: <BsDeviceHdd />,
-        title: 'Home Appliance',
-    },
-];
 
 const menuData = [
     {
@@ -76,6 +41,27 @@ const menuData = [
 
 const MobileDeviceSideBar = () => {
     const [showLinkData, setShowLinkData] = useState(true);
+    const [data, setData] = useState([]);
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+    const fetchUrl = `${apiUrl}/api/category`;
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch(fetchUrl, {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                });
+                const data = await response.json();
+                setData(data);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        fetchData();
+    }, []);
 
     const toggleData = () => {
         setShowLinkData(!showLinkData);
@@ -104,20 +90,24 @@ const MobileDeviceSideBar = () => {
                 </motion.div>
             </div>
             {showLinkData
-                ? linkData.map((link, index) => (
+                ? data.map((item, index) => (
                     <div className="links-content border-b border-gray-200 pb-4" key={index}>
                         <motion.div
                             transition={{ duration: 0.5, delay: 0.2 }}
                             className="icon-size"
                         >
-                            {link.icon}
+                            {
+                                item.title == "Laptops, Tablets & PCs" ? <LuLaptop2 />
+                                    : item.title == "Computer & Office" ? <LuMouse />
+                                        : ""
+                            }
                         </motion.div>
                         <motion.a
-                            href="/"
+                            href={item.link}
                             transition={{ duration: 0.5, delay: 0.2 }}
                             className="link-title"
                         >
-                            {link.title}
+                            {item.title}
                         </motion.a>
                     </div>
                 ))
