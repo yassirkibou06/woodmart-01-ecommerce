@@ -29,7 +29,7 @@ const CardOne = ({ item }) => {
             onHoverStart={() => !isMobile && setHoverCardId(item.id)}
             onMouseLeave={() => !isMobile && setHoverCardId(null)}
             key={item.id}
-            className={`mt-8 py-2 bg-white w-[160px] md:w-[190px] lg:w-[240px] h-[440px] lg:h-[480px] rounded-lg relative`} >
+            className={`mt-8 py-2 bg-white w-[175px] md:w-[190px] lg:w-[240px] h-[440px] lg:h-[480px] rounded-lg relative`} >
             <motion.div
                 initial={{ y: 0 }}
                 whileHover={!isMobile ? { y: -10, boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.3)" } : {}}

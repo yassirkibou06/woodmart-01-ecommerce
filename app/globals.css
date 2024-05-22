@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 /*font import*/
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');@layer base {
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+@layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
@@ -324,12 +326,16 @@ a {
   background: transparent !important;
 }
 
+.popular .swiper .swiper-wrapper .swiper-slide {
+  width: 169px !important;
+}
 
-@media (max-width: 360px) {
+
+@media (max-width: 420px) {
   .popular .swiper .swiper-wrapper .swiper-slide {
     width: 140px !important;
-    margin-right: -15px !important;
-    margin-left: 31px !important;
+    margin-right: 5px !important;
+    margin-left: 35px !important;
   }
 }
 

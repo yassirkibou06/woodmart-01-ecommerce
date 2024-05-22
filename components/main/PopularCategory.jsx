@@ -73,7 +73,7 @@ const PopularCategory = () => {
                         slidesPerView: 3,
                     },
                     320: {
-                        slidesPerView: 1,
+                        slidesPerView: 2,
                     },
                 }}
                 modules={[Navigation]}
@@ -83,7 +83,7 @@ const PopularCategory = () => {
                 }}
                 onSlideChange={handleSwiperChange}
                 onInit={handleSwiperChange}  // Ensure buttons' state is set on initialization
-                className="swiper w-[340px] md:w-[900px] lg:w-[1245px] relative"
+                className="swiper w-[360px] md:w-[900px] lg:w-[1245px] relative"
             >
                 {/**card just example */}
                 {data.map((item) => (
