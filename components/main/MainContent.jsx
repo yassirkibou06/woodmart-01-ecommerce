@@ -12,7 +12,7 @@ import CountdownTimer from '../CountdownTimer';
 
 const MainContent = () => {
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 py-4 pl-4 mb-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 py-4 px-4 lg:pl-4 lg:pr-0 mb-4">
             <Swiper
                 pagination={true}
                 modules={[Pagination]}
@@ -22,14 +22,14 @@ const MainContent = () => {
                 }}
                 className="bg-white z-0 w-full h-[470px] rounded-lg m-0 relative" >
                 <SwiperSlide className="text-center">
-                    <img className="absolute z-[-1] object-cover h-full" src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/apple-shopping-event.jpg" alt="" />
+                    <img className="absolute z-[-1] object-cover w-full h-full" src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/apple-shopping-event.jpg" alt="" />
                     <h2 className="font-Lato text-white mt-10 font-semibold text-4xl tracking-wider">Apple Shopping Event</h2>
                     <p className="text-[15px] text-gray-300 tracking-wide mt-4">Shop great deals on MacBook, iPad, iPhone and more.</p>
                     <Button className="hover:bg-primary/90 mt-5 text-white">Shopw now</Button>
                 </SwiperSlide>
                 {/** => //// => space */}
                 <SwiperSlide >
-                    <img className="absolute z-[-1] object-cover h-full" src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/pre-order-g-pixel-7.jpg" alt="" />
+                    <img className="absolute z-[-1] object-cover w-full h-full" src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/pre-order-g-pixel-7.jpg" alt="" />
                     <h2 className="font-Lato text-white mt-10 font-semibold text-4xl tracking-wider pl-5">The new Google Pixel 7</h2>
                     <p className="text-[15px] text-gray-300 tracking-wide mt-4 pl-5">Shop great deals on MacBook, iPad, iPhone and more.</p>
                     <Button className="hover:bg-primary/90 mt-5 text-white ml-5">Pre-Order Now</Button>
@@ -40,9 +40,9 @@ const MainContent = () => {
                 </div>
             </Swiper>
             {/** => ////////// */}
-            <div className="pr-4">
+            <div className="pr-0 lg:pr-4">
                 <div className="w-full h-[250px] bg-[#f0d7da] rounded-lg relative z-0 cursor-pointer overflow-hidden">
-                    <motion.div className="absolute z-[-1] h-full overflow-hidden" transition={{ duration: 0.4 }} whileHover={{ scale: 1.1 }}>
+                    <motion.div className="absolute z-[-1] w-full h-full overflow-hidden" transition={{ duration: 0.4 }} whileHover={{ scale: 1.1 }}>
                         <img className="object-cover w-full h-full rounded-lg" src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2023/02/logitech-aurora-headset.jpg" alt="" />
                     </motion.div>
                     <h2 className="font-Lato text-white mt-10 font-semibold text-3xl tracking-wider pl-5">Aurora Headset</h2>

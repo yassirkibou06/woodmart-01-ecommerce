@@ -58,17 +58,23 @@ const PopularCategory = () => {
     };
 
     return (
-        <div className="relative">
+        <div className="popular relative">
             <Swiper
-                slidesPerView={2}
-                spaceBetween={5}
-                breakpoints={{
-                    430: {
-                        slidesPerView: 2
+                slidesPerView={6}
+                spaceBetween={2}
+                breakpoints= {{
+                    960: {
+                        slidesPerView: 4,
                     },
-                    1020: {
-                        slidesPerView: 6
-                    }
+                    720: {
+                        slidesPerView: 3,
+                    },
+                    540: {
+                        slidesPerView: 3,
+                    },
+                    320: {
+                        slidesPerView: 1,
+                    },
                 }}
                 modules={[Navigation]}
                 navigation={{
@@ -77,11 +83,11 @@ const PopularCategory = () => {
                 }}
                 onSlideChange={handleSwiperChange}
                 onInit={handleSwiperChange}  // Ensure buttons' state is set on initialization
-                className="swiper w-[430px] lg:w-[1240px] relative"
+                className="swiper w-[340px] md:w-[900px] lg:w-[1245px] relative"
             >
                 {/**card just example */}
                 {data.map((item) => (
-                    <SwiperSlide key={item.id} className="card w-[150px] mt-6">
+                    <SwiperSlide key={item.id} className="card w-[120px] lg:w-[150px] mt-6">
                         <motion.div className="" onhovertransition={{ duration: 0.4 }} whileHover={{ scale: 1.1 }} >
                             <img className="rounded-lg w-[150px] h-[150px]" src={item.img} alt="" />
                         </motion.div>
@@ -93,7 +99,7 @@ const PopularCategory = () => {
             <div className={`swiper-btn-prev cursor-pointer z-50 text-gray-500 absolute top-24 left-0 visible lg:invisible ${isBeginning ? 'opacity-20' : ''}`}>
                 <BiChevronLeft size={35} />
             </div>
-            <div className={`swiper-btn-next cursor-pointer z-50 text-gray-500 absolute top-24 right-0 visible lg:invisible ${isEnd ? 'opacity-20' : ''}`}>
+            <div className={`swiper-btn-next cursor-pointer z-50 text-gray-500 absolute top-24 -right-2 lg:right-0 visible lg:invisible ${isEnd ? 'opacity-20' : ''}`}>
                 <BiChevronRight size={35} />
             </div>
         </div >

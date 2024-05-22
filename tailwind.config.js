@@ -79,7 +79,8 @@ module.exports = {
       gridTemplateColumns: {
         'open': '270px 1fr',
         'close': '60px 1fr',
-        'addProduct': '450px 100px'
+        'addProduct': '450px 100px',
+        'custom': '158px 1fr'
       }
     },
   },

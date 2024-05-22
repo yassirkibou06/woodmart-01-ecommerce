@@ -99,8 +99,8 @@ const BestOffers = () => {
     return (
         <div className="mt-24">
             <div className="flex justify-between items-center">
-                <h2 className="font-Lato font-semibold text-[26px] text-neutral-800">The Best Offers</h2>
-                <div className="flex items-center bg-blue-100 py-3 px-6 rounded-full transition-all hover:bg-blue-200/70 cursor-pointer">
+                <h2 className="font-Lato font-semibold text-xl lg:text-[26px] text-neutral-800">The Best Offers</h2>
+                <div className="flex items-center bg-blue-100 py-3 px-3 lg:px-6 rounded-full transition-all hover:bg-blue-200/70 cursor-pointer">
                     <p className="text-blue-700 font-medium text-sm mb-[2px]">More products</p>
                     <GoChevronRight className="text-blue-700 text-xl" />
                 </div>

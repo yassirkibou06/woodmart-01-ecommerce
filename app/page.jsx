@@ -10,9 +10,11 @@ const page = () => {
     <>
       <div className="main bg-[#f6f6f6] h-fit">
         <MainContent />
-        <div className="px-4 py-14">
-          <h2 className="font-Lato font-semibold text-[26px] text-neutral-800">Popular Categories</h2>
+        <div className="py-14">
+          <h2 className="px-4 font-Lato font-semibold text-xl lg:text-[26px] text-neutral-800">Popular Categories</h2>
           <PopularCategory />
+        </div>
+        <div className="px-4">
           <BestOffers />
           <NewGoods />
         </div>
